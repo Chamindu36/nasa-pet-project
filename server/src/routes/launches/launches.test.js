@@ -11,6 +11,7 @@ const {
 describe('Launches API', () => {
     beforeAll(async () => {
         await mongoConnect();
+        await loadPlanetsData();
     }, 30000);
 
     afterAll(async () => {

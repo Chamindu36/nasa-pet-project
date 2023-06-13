@@ -2,6 +2,8 @@
 
 This is a pet project leveraging GitHub Actions and the MERN stack (MongoDB, Express.js, React.js, Node.js) for API development.
 
+**Public Docker Image of this project** - [📥Download](https://hub.docker.com/repository/docker/chamindu36/nasa-pet-project/general)
+
 ## Overview
 
 The aim of this project is to help understand the usage of GitHub Actions along with the MERN stack to develop a robust API. Docker is used to ensure the application runs seamlessly in any environment.
@@ -11,9 +13,10 @@ The aim of this project is to help understand the usage of GitHub Actions along 
 Ensure you have the following installed on your local machine:
 
 - [Docker](https://docs.docker.com/get-docker/)
-- [Node.js] (https://nodejs.org)
-- [MongoDB](https://mongo.com/)
-- [Express.js](https://expressjs.)
+- [Node.js](https://nodejs.org/en)
+- [MongoDB](https://www.mongodb.com/)
+- [Express.js](https://expressjs.com/)
+- [React.js](https://expressjs.com/)
 
 ## Steps to Run
 

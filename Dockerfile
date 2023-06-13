@@ -8,12 +8,12 @@ WORKDIR /app
 COPY package*.json ./
 
 # Copy client/package.json to newly created app 
-COPY client/package*.json ./client/package.json
+COPY client/package*.json client/
 # Install prod wanted dependencies for client
 RUN npm run install-client --omit=dev
 
 # Copy server/package.json to newly created app 
-COPY server/package*.json ./client/package.json
+COPY server/package*.json server/
 # Install prod wanted dependencies for server
 RUN npm run install-server --omit=dev
 

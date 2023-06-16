@@ -49,6 +49,74 @@ Ensure you have the following installed on your local machine:
 
    Again, replace `<USERNAME>` with your DockerHub username. The application will then be accessible at `http://localhost:8000`.
 
+
+## Project Setup in local & Commands
+
+This project has a client-server structure, with each having its own separate dependencies. Below are the npm scripts to manage these dependencies, start the servers, and deploy the project.
+
+### Installation
+
+To install dependencies for the server, run:
+
+```bash
+npm run install-server
+```
+
+To install dependencies for the client, run:
+
+```bash
+npm run install-client
+```
+
+To install dependencies for both client and server, run:
+
+```bash
+npm run install
+```
+
+### Running the Servers
+
+To start the server, run:
+
+```bash
+npm run server
+```
+
+To start the client, run:
+
+```bash
+npm run client
+```
+
+To start both the server and the client at the same time, run:
+
+```bash
+npm run watch
+```
+
+### Deployment
+
+To build the client and start the server, run:
+
+```bash
+npm run deploy
+```
+
+To build the client and start the server in cluster mode, run:
+
+```bash
+npm run deploy-cluster
+```
+
+### Testing
+
+To run tests for the server, use:
+
+```bash
+npm run test
+```
+Please replace `npm` with `yarn` if you're using yarn as your package manager.
+
 ## Contributing
 
 Please feel free to fork this repository, make some changes, and submit pull requests. Feedback is welcome and appreciated!

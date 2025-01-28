@@ -15,11 +15,26 @@ mongoose.connection.on('error', (err) => {
 });
 
 async function mongoConnect() {
-    await mongoose.connect(MONGO_URL);
+    try {
+        await mongoose.connect(MONGO_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 5000,
+            connectTimeoutMS: 10000,
+        });
+    } catch (err) {
+        console.error('Error connecting to MongoDB:', err);
+        throw err;
+    }
 }
 
 async function mongoDisconnect() {
-    await mongoose.disconnect();
+    try {
+        await mongoose.disconnect();
+    } catch (err) {
+        console.error('Error disconnecting from MongoDB:', err);
+        throw err;
+    }
 }
 
 module.exports = {

@@ -99,6 +99,9 @@ async function getLatestFlightNumber() {
 }
 
 async function getAllLaunches(skip, limit) {
+  skip = Math.max(0, Number(skip) || 0);
+  limit = Math.max(0, Number(limit) || 0);
+
   return await launchesDatabase
     .find({}, { '_id': 0, '__v': 0 })
     .sort({ flightNumber: 1 })

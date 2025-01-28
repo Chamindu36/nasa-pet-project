@@ -9,29 +9,34 @@ const SPACEX_API_URL = 'https://api.spacexdata.com/v4/launches/query';
 
 async function populateLaunches() {
   console.log('Downloading launch data...');
-  const response = await axios.post(SPACEX_API_URL, {
-    query: {},
-    options: {
-      pagination: false,
-      populate: [
-        {
-          path: 'rocket',
-          select: {
-            name: 1
+  try {
+    const response = await axios.post(SPACEX_API_URL, {
+      query: {},
+      options: {
+        pagination: false,
+        populate: [
+          {
+            path: 'rocket',
+            select: {
+              name: 1
+            }
+          },
+          {
+            path: 'payloads',
+            select: {
+              'customers': 1
+            }
           }
-        },
-        {
-          path: 'payloads',
-          select: {
-            'customers': 1
-          }
-        }
-      ]
-    }
-  });
+        ]
+      }
+    });
 
-  if (response.status !== 200) {
-    console.log('Problem downloading launch data');
+    if (response.status !== 200) {
+      console.log('Problem downloading launch data');
+      throw new Error('Launch data download failed');
+    }
+  } catch (err) {
+    console.error('Failed to download launch data', err);
     throw new Error('Launch data download failed');
   }
 
